@@ -22,7 +22,7 @@
 
 ## Use Cases
 
-1. Use Case Name (Should match functional requirement name)
+#### Use Case Name (Should match functional requirement name)
 - **Pre-condition:** <can be a list or short description> 
 
 - **Trigger:** <can be a list or short description> 
@@ -53,5 +53,5 @@
   1. ...
   2. ...
   3. ...
-2. Use Case Name (Should match functional requirement name)
+#### Use Case Name (Should match functional requirement name)
    ...
