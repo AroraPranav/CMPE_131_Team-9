@@ -1,18 +1,15 @@
-## Instructions
-
-- Delete this block before adding to your repository. 
-
-- Delete any instructions you see below they will be within < >
-  
-- This schedule should reflect the meetings from the start of the project until the end of the semester.
-
-- Write at least 1 meeting per week until the end of the semester
-
-  
 ## Meetings
 
 
-### 2022-04-15 at 13:30
+### 2022-04-19 at 21:00
+- Pranav Arora, Vincent Pham
+- Milestone 1: Meeting
+  - Pranav created the public repo that we will use and worked on readme.md
+  
+  - Vincent worked on meetings.md and forked the repo.
+  
+  - Next meeting, members will work on the functional requirements/non-functional requirements
+  
 <meeting template would go here>
 <only fill in template once you had the meeting>
 <see example on the last date>
