@@ -9,16 +9,16 @@
 7. See all items available from all of the sellers
 8. Find items
 9. User profiles
-10. *Add pictures for items
+10. Add pictures for items
 11. Add items
 12. Splash page
 
 ## Non-functional Requirements
 
-1. non-functional
-2. non-functional
-3. non-functional
-4. non-functional
+1. Compatibility
+2. Usability
+3. Performance
+4. Environmental
 
 ## Use Cases
 
