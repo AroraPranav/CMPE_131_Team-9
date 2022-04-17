@@ -10,8 +10,8 @@
 8. Find items
 9. User profiles
 10. *Add pictures for items
-11. requirement
-12. requirement
+11. Add items
+12. Splash page
 
 ## Non-functional Requirements
 
