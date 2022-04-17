@@ -1,7 +1,7 @@
 ## Meetings
 
 
-### 2022-04-19 at 21:00
+### 2022-04-15 at 21:00
 - Pranav Arora, Vincent Pham
 - Milestone 1: Meeting
   - Pranav created the public repo that we will use and worked on readme.md
@@ -9,6 +9,15 @@
   - Vincent worked on meetings.md and forked the repo.
   
   - Next meeting, members will work on the functional requirements/non-functional requirements
+
+### 2022-04-17 at 15:00
+- Pranav Arora, Hemanth Jammalamadaka
+- Milestone 1: Meeting
+  - Updated the requirements.
+  
+  - Theorized a sturcture for our website.
+  
+  - Planned our steps for the next meeting.
   
 <meeting template would go here>
 <only fill in template once you had the meeting>
