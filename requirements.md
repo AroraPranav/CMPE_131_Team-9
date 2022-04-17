@@ -1,15 +1,15 @@
 ## Functional Requirements
 
-1. requirement
-2. requirement
-3. requirement
-4. requirement
-5. requirement
-6. requirement
-7. requirement
-8. requirement
-9. requirement
-10. requirement
+1. Login
+2. Logout
+3. Create new account
+4. Delete account
+5. User Ratings
+6. Bid item
+7. See all items available from all of the sellers
+8. Find items
+9. User profiles
+10. *Add pictures for items
 11. requirement
 12. requirement
 
