@@ -1,5 +1,5 @@
 # Project Name
 - Pranav Arora (@AroraPranav)
 - Vincent Pham (@vincent-t-pham)
-- Name (@username)
+- Eleasha Dela Cruz (@sashaqty)
 - Name (@username)
