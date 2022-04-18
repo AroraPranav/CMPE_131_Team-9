@@ -51,5 +51,28 @@
   2. User chooses to buy a product.
   3. User directly clicks on the star logo under the product title. 
 
-### Use Case Name (Should match functional requirement name)
-   ...
+### Bid Item (Pranav Arora)
+- **Pre-condition:** Should already have an account, be logged in as a customer, and have already chosen a product. 
+
+- **Actors:** User and Server
+
+- **Trigger:** Customer clicks on "Place Bid".
+
+- **Primary Sequence:**
+  
+  1. User logs into their account.
+  2. User chooses to buy a product.
+  3. User clicks on the product they want to bid on.
+  4. User clicks on "Place Bid".
+  5. User enters the amount for the bid.
+  6. User clicks on confirm.
+ 
+- **Primary Postconditions:** User will see that their bid is confirmed and after that they'll see an option on how they will be updated about the bids on the product. 
+
+- **Alternate Sequence:** 
+  
+  1. User logs into their account.
+  2. User chooses to buy a product.
+  3. User directly clicks on the "Bid" button under the product title.
+  4. User adds the amount to the text box.
+  5. User confirms the amount.
