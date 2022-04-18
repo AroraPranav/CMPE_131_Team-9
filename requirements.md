@@ -22,36 +22,33 @@
 
 ## Use Cases
 
-#### Use Case Name (Should match functional requirement name)
-- **Pre-condition:** <can be a list or short description> 
+### Find items JammalamadakaProfiles)
+- **Pre-condition:** User is already viewing splash page
 
-- **Trigger:** <can be a list or short description> 
+- **Actors:** User and Server
+
+- **Trigger:** User clicks on "Find".
 
 - **Primary Sequence:**
   
-  1. ...
-  2. ... 
-  3. ...
-  4. ... 
-  5. ...
-  6. ...
-  7. ...
-  8. ...
-  9. ...
-  10. <Try to stick to a max of 10 steps>
+  1. User clicks on search bar.
+  2. User selects "type", "locality" and "city" search parameters of product to narrow down results
+  3. User clicks on "Find" to initiate action.
+ 
+- **Primary Postconditions:** User can see a list of all the products that match the search criterion.
 
-- **Primary Postconditions:** <can be a list or short description> 
+### User Profiles (Hemanth JammalamadakaProfiles)
+- **Pre-condition:** Should already have an account (), be logged into said account. 
 
-- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+- **Actors:** User and Server
+
+- **Trigger:** User clicks on profile display picture, and consequently "view proflie"
+
+- **Primary Sequence:**
   
-  1. ...
-  2. ...
-  3. ...
+  1. User logs into their account.
+  2. User clicks on desired user's profile picture.
+  3. User clicks on "view profile" to confirm action. 
+ 
+- **Primary Postconditions:** User can see all products listed by the user as well as all the ratings posted by the user.
 
-- **Alternate Sequence <optional>:** <you can have more than one alternate sequence to describe multiple issues that may arise>
-  
-  1. ...
-  2. ...
-  3. ...
-#### Use Case Name (Should match functional requirement name)
-   ...
