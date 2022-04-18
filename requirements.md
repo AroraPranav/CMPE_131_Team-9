@@ -30,10 +30,33 @@
 ### Delete account
 
 ### Use Case Name (Should match functional requirement name)
-- **Pre-condition:** <can be a list or short description> 
+- **Pre-condition:** 
+1. User Ratings- Have a profile and had bought the item
+2. Bid item- Need a profile, if user is login and credit card is put in  
+3. See all items available from all of the sellers- 
+4. Find items: If the area is valid such as State, Zip, Country. 
+5. User profiles- Need a name, email, and password. 
+6. Add pictures for items- Need a image to upload, offer a small size image and a profile
+7. Add items- Need a login, items need to be in stock.
+8. Splash page- 
+9. Compatibility - Needs to run on compatible devices (Phones, Laptop, computer)
+10. Usability- Needs to be easy navigable
+11. Performance- Needs to run quick
+12. Environmental- 
 
 - **Trigger:** <can be a list or short description> 
-
+1.User Ratings- Login, buy item, get item, leave review
+2. Bid item- Login, pick item, bid item.
+3. See all items available from all of the sellers- Click on see all items
+4. Find items- Search using specific locations on the search bar
+5. User profiles- Click create account, put in personal information
+6. Add pictures for items- login, go to user account, create a listing and add picture
+7. Add items- login, go to user account, create a listing with every details of the listing
+8. Splash page
+9. Compatibility- 
+10. Usability
+11. Performance
+12. Environmental
 - **Primary Sequence:**
   
   1. ...
