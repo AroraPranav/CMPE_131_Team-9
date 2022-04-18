@@ -147,3 +147,55 @@
   4. User adds the amount to the text box.
   5. User confirms the amount.
 
+### Add Item (Vincent Pham) ###
+- **Summary:** Seller can add items such as their property for sale
+
+- **Pre-condition:** User has signed in to their registered account
+
+- **Actors:** User and Server
+
+- **Trigger:** Seller selects 'Create listing' 
+
+- **Primary Sequence:**
+
+    1. User logs into their account
+    2. User selects 'Create Listing'
+    3. User inputs the information required for the listing (Location, property type, price, bid/no bid (see use case "Bid Item), a picture (see use case "Add pictures for Items")
+    4. User presses submit
+    5. Server receives that listing and saves it into the database
+    6. User logs out and closes the tab
+
+- **Primary Post-condition:** Listing is received in the database to be queried by users
+
+- **Alternative Sequence:** 
+
+    1. User logs into their account
+    2. User selects 'Create Listing' 
+    3. User does not input enough information required for the listing
+        - Server displays  an error message to the user
+        - Server prompts user to enter all required information
+        
+### Splash Page (Vincent Pham)
+- **Summary:** After clicking into the website, the user is prompted about their location or target price in order to query houses in the area
+
+- **Pre-condition:** No pre-condition
+
+- **Actors:** User and Server
+
+- **Trigger:** User enters the website
+
+- **Primary Sequence:**
+
+    1. User enters the website
+    2. Server prompts user to input their target city, state
+    3. User types in City box and State box their city and state (see use case "Find item")
+    4. Server checks database for houses that match the entry
+    5. Server shows available houses on sale in the area
+
+- **Alternate Sequence:**
+
+    1. User enters website
+    2. Server prompts user to input their target city, state
+    3. User exits the splash page 
+    4. User logs into their account (see use case "Login")
+
