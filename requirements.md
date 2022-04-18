@@ -21,7 +21,24 @@
 4. Environmental
 
 ## Use Cases
-
+- Login
+  - Summary: A user logins into their account with a password
+  - Actor(s): A customer or seller
+  - Pre-conditions: User has created an account
+  - Trigger: User selects 'Sign-in' button
+- Logout
+  - Summary: A user logs out of their account
+  - Actor(s): A customer or seller
+  - Pre-conditions: User has logged into their account
+  - Trigger: User selects 'logout' button
+- Create New Account
+  - Summary: A user registers a login username and password with the website database
+  - Actor(s): A customer or seller
+  - Pre-conditions: No precondition
+  - Trigger: User selects 'Create new account'
+- Delete Account
+  - Summary: User deletes their account registered with the website database
+  - Actor(s): 
 #### Use Case Name (Should match functional requirement name)
 - **Pre-condition:** <can be a list or short description> 
 
