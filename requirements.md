@@ -29,6 +29,44 @@
 
 ### Delete account
 
+### Add pictures for items  (Eleasha Dela Cruz)
+- **Pre-condition:** Need to be login, create a listing, Need an image to upload.
+
+- **Trigger:** 
+    1. Click "Create Listing"
+    2. Click "Upload Image"
+  
+- **Primary Sequence:**
+    1. User Login 
+    2. User create a new listing
+    3. User upload image to show
+ 
+    
+- **Primary Postconditions:** Users will see a new created listing with images
+
+- **Alternate Sequence:** 
+  1. User login
+  2. User go to her personal account 
+  2. User create listing
+  3. User can upload multiple photos
+
+###  See all items available from all of the sellers (Eleasha  Dela Cruz)
+- **Pre-condition:** Should already have an account, Logged in as customer, Should have a seller decided.
+
+- **Trigger:** Choose a seller
+  
+- **Primary Sequence:**
+    1. User may login
+    2. User can search a seller.
+    3. User clicks on "Show all listings"
+    
+- **Primary Postconditions:** User will see all availble listing 
+
+- **Alternate Sequence:** 
+  1. User needs to login
+  2. User search the place or the seller
+  3. Click on "See all Listing"
+
 ### Find items (Hemanth Jammalamadaka)
 - **Pre-condition:** User is already viewing splash page
 
@@ -106,3 +144,4 @@
   3. User directly clicks on the "Bid" button under the product title.
   4. User adds the amount to the text box.
   5. User confirms the amount.
+
