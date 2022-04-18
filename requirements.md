@@ -30,58 +30,45 @@
 ### Delete account
 
 ### Use Case Name (Should match functional requirement name)
-- **Pre-condition:** 
-1. User Ratings- Have a profile and had bought the item
-2. Bid item- Need a profile, if user is login and credit card is put in  
-3. See all items available from all of the sellers- 
-4. Find items: If the area is valid such as State, Zip, Country. 
-5. User profiles- Need a name, email, and password. 
-6. Add pictures for items- Need a image to upload, offer a small size image and a profile
-7. Add items- Need a login, items need to be in stock.
-8. Splash page- 
-9. Compatibility - Needs to run on compatible devices (Phones, Laptop, computer)
-10. Usability- Needs to be easy navigable
-11. Performance- Needs to run quick
-12. Environmental- 
+### Add pictures for items
+- **Pre-condition:** Need to be login, create a listing, Need an image to upload, offer a small size image
 
 - **Trigger:** <can be a list or short description> 
-1.User Ratings- Login, buy item, get item, leave review
-2. Bid item- Login, pick item, bid item.
-3. See all items available from all of the sellers- Click on see all items
-4. Find items- Search using specific locations on the search bar
-5. User profiles- Click create account, put in personal information
-6. Add pictures for items- login, go to user account, create a listing and add picture
-7. Add items- login, go to user account, create a listing with every details of the listing
-8. Splash page
-9. Compatibility- 
-10. Usability
-11. Performance
-12. Environmental
-- **Primary Sequence:**
+    1. Click "Create Listing"
+    2. Click "Upload Image"
   
-  1. ...
-  2. ... 
-  3. ...
-  4. ... 
-  5. ...
-  6. ...
-  7. ...
-  8. ...
-  9. ...
-  10. <Try to stick to a max of 10 steps>
-
+- **Primary Sequence:**
+    1. User Login 
+    2. User create a new listing
+    3. User upload image to show
+ 
+    
 - **Primary Postconditions:** <can be a list or short description> 
+  Users will see a new created listing with images
 
 - **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
   
-  1. ...
-  2. ...
-  3. ...
+  1. User login
+  2. User go to her personal account 
+  2. User create listing
+  3. User can upload multiple photos
 
-- **Alternate Sequence <optional>:** <you can have more than one alternate sequence to describe multiple issues that may arise>
-  
-  1. ...
-  2. ...
-  3. ...
 #### Use Case Name (Should match functional requirement name)
-   ...
+   ###  See all items available from all of the sellers
+- **Pre-condition:** User will want to see more of listing
+
+- **Trigger:** <can be a list or short description> 
+    1. Click "See all Listing"
+  
+- **Primary Sequence:**
+    1. User may or may not login 
+    2. user can choose to see all listing 
+    
+- **Primary Postconditions:** <can be a list or short description> 
+ User will see all availble listing 
+
+- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
+  
+ 1. User needs to login
+  2. User search the place or the seller
+  3. Click on "See all Listing"
