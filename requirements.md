@@ -32,9 +32,11 @@
 ### Add pictures for items  (Eleasha Dela Cruz)
 - **Pre-condition:** Need to be login, create a listing, Need an image to upload.
 
+- **Actors:** User and Server
 - **Trigger:** 
     1. Click "Create Listing"
     2. Click "Upload Image"
+   
   
 - **Primary Sequence:**
     1. User Login 
@@ -52,7 +54,7 @@
 
 ###  See all items available from all of the sellers (Eleasha  Dela Cruz)
 - **Pre-condition:** Should already have an account, Logged in as customer, Should have a seller decided.
-
+- **Actors:** User and Server
 - **Trigger:** Choose a seller
   
 - **Primary Sequence:**
