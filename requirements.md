@@ -32,7 +32,10 @@
 ### Add pictures for items  (Eleasha Dela Cruz)
 - **Pre-condition:** Need to be login, create a listing, Need an image to upload.
 
+- **Summary:** This feature allows a seller to add photographs to their product.
+
 - **Actors:** User and Server
+
 - **Trigger:** 
     1. Click "Create Listing"
     2. Click "Upload Image"
@@ -54,7 +57,11 @@
 
 ###  See all items available from all of the sellers (Eleasha  Dela Cruz)
 - **Pre-condition:** Should already have an account, Logged in as customer, Should have a seller decided.
+
+- **Summary:** This feature allows user to see all the products by the seller.
+
 - **Actors:** User and Server
+
 - **Trigger:** Choose a seller
   
 - **Primary Sequence:**
@@ -71,6 +78,8 @@
 
 ### Find items (Hemanth Jammalamadaka)
 - **Pre-condition:** User is already viewing splash page
+ 
+- **Summary:** This feature allows user to find a item to buy.
 
 - **Actors:** User and Server
 
@@ -85,7 +94,9 @@
 - **Primary Postconditions:** User can see a list of all the products that match the search criterion.
 
 ### User Profiles (Hemanth Jammalamadaka)
-- **Pre-condition:** Should already have an account (), be logged into said account. 
+- **Pre-condition:** Should already have an account , be logged into said account. 
+
+- **Summary:** This feature allows user to view a sellers profile.
 
 - **Actors:** User and Server
 
@@ -101,6 +112,8 @@
 
 ### User Rating (Pranav Arora)
 - **Pre-condition:** Should already have an account, be logged in as a customer, and have already chosen a product. 
+
+- **Summary:** This feature allows a user to rate a product.
 
 - **Actors:** User and Server
 
@@ -123,6 +136,8 @@
 
 ### Bid Item (Pranav Arora)
 - **Pre-condition:** Should already have an account, be logged in as a customer, and have already chosen a product. 
+
+- **Summary:** This feature allows a user to bid on an item they want to buy.
 
 - **Actors:** User and Server
 
@@ -172,7 +187,7 @@
     1. User logs into their account
     2. User selects 'Create Listing' 
     3. User does not input enough information required for the listing
-        - Server displays  an error message to the user
+        - Server displays an error message to the user
         - Server prompts user to enter all required information
         
 ### Splash Page (Vincent Pham)
@@ -198,4 +213,16 @@
     2. Server prompts user to input their target city, state
     3. User exits the splash page 
     4. User logs into their account (see use case "Login")
+
+### Compatibility
+- This website is compatible on Google Chrome.
+
+### Usability
+- This is a basic marketplace website where people can buy or sell products
+
+### Performance
+- Every action by a user is responded within 5 seconds. 
+
+### Environmental
+- The system will be working on a computer and a cell phone which has google chrome as their browser.
 
