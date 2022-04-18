@@ -38,7 +38,49 @@
   - Trigger: User selects 'Create new account'
 - Delete Account
   - Summary: User deletes their account registered with the website database
+  - Actor(s): A customer or seller
+  - Pre-conditions: User has currently logged into a registered account
+  - Trigger: User selects 'Delete account'
+-  User Ratings
+  - Summary: 
   - Actor(s): 
+  - Pre-conditions: 
+  - Trigger: 
+-  Bid Item
+  - Summary: 
+  - Actor(s): 
+  - Pre-conditions: 
+  - Trigger: 
+-  See all items available from all of the sellers
+  - Summary: 
+  - Actor(s): 
+  - Pre-conditions: 
+  - Trigger: 
+-  Find Items
+  - Summary: 
+  - Actor(s): 
+  - Pre-conditions: 
+  - Trigger: 
+-  User Profiles
+  - Summary: 
+  - Actor(s): 
+  - Pre-conditions: 
+  - Trigger: 
+-  Add Pictures for Items
+  - Summary: 
+  - Actor(s): 
+  - Pre-conditions: 
+  - Trigger: 
+-  Add Items
+  - Summary: 
+  - Actor(s): 
+  - Pre-conditions: 
+  - Trigger: 
+-  Splash Page
+  - Summary: 
+  - Actor(s): 
+  - Pre-conditions: 
+  - Trigger: 
 #### Use Case Name (Should match functional requirement name)
 - **Pre-condition:** <can be a list or short description> 
 
