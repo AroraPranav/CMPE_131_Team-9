@@ -170,8 +170,8 @@
     1. User logs into their account
     2. User selects 'Create Listing' 
     3. User does not input enough information required for the listing
-        a. Server displays  an error message to the user
-        b. Server prompts user to enter all required information
+        - Server displays  an error message to the user
+        - Server prompts user to enter all required information
         
 ### Splash Page (Vincent Pham)
 - **Summary:** After clicking into the website, the user is prompted about their location or target price in order to query houses in the area
