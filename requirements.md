@@ -4,14 +4,14 @@
 2. Logout
 3. Create new account
 4. Delete account
-5. User Ratings
-6. Bid item
-7. See all items available from all of the sellers
-8. Find items
-9. User profiles
-10. Add pictures for items
-11. Add items
-12. Splash page
+5. User Ratings (Pranav)
+6. Bid item (Pranav)
+7. See all items available from all of the sellers (Eleasha)
+8. Find items (Hemanth)
+9. User profiles (Hemanth)
+10. Add pictures for items (Eleasha)
+11. Add items (Vincent)
+12. Splash page (Vincent)
 
 ## Non-functional Requirements
 
