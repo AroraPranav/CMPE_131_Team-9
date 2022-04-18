@@ -30,7 +30,7 @@
 ### Delete account
 
 ### Use Case Name (Should match functional requirement name)
-### Add pictures for items
+### Add pictures for items - Eleasha  Dela Cruz
 - **Pre-condition:** Need to be login, create a listing, Need an image to upload, offer a small size image
 
 - **Trigger:** <can be a list or short description> 
@@ -54,7 +54,7 @@
   3. User can upload multiple photos
 
 #### Use Case Name (Should match functional requirement name)
-   ###  See all items available from all of the sellers
+   ###  See all items available from all of the sellers- Eleasha  Dela Cruz
 - **Pre-condition:** User will want to see more of listing
 
 - **Trigger:** <can be a list or short description> 
