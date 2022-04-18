@@ -4,14 +4,14 @@
 2. Logout
 3. Create new account
 4. Delete account
-5. User Ratings
-6. Bid item
-7. See all items available from all of the sellers
-8. Find items
-9. User profiles
-10. Add pictures for items
-11. Add items
-12. Splash page
+5. User Ratings (Pranav)
+6. Bid item (Pranav)
+7. See all items available from all of the sellers (Eleasha)
+8. Find items (Hemanth)
+9. User profiles (Hemanth)
+10. Add pictures for items (Eleasha)
+11. Add items (Vincent)
+12. Splash page (Vincent)
 
 ## Non-functional Requirements
 
@@ -29,11 +29,10 @@
 
 ### Delete account
 
-### Use Case Name (Should match functional requirement name)
-### Add pictures for items - Eleasha  Dela Cruz
-- **Pre-condition:** Need to be login, create a listing, Need an image to upload, offer a small size image
+### Add pictures for items  (Eleasha Dela Cruz)
+- **Pre-condition:** Need to be login, create a listing, Need an image to upload.
 
-- **Trigger:** <can be a list or short description> 
+- **Trigger:** 
     1. Click "Create Listing"
     2. Click "Upload Image"
   
@@ -43,32 +42,106 @@
     3. User upload image to show
  
     
-- **Primary Postconditions:** <can be a list or short description> 
-  Users will see a new created listing with images
+- **Primary Postconditions:** Users will see a new created listing with images
 
-- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
-  
+- **Alternate Sequence:** 
   1. User login
   2. User go to her personal account 
   2. User create listing
   3. User can upload multiple photos
 
-#### Use Case Name (Should match functional requirement name)
-   ###  See all items available from all of the sellers- Eleasha  Dela Cruz
-- **Pre-condition:** User will want to see more of listing
+###  See all items available from all of the sellers (Eleasha  Dela Cruz)
+- **Pre-condition:** Should already have an account, Logged in as customer, Should have a seller decided.
 
-- **Trigger:** <can be a list or short description> 
-    1. Click "See all Listing"
+- **Trigger:** Choose a seller
   
 - **Primary Sequence:**
-    1. User may or may not login 
-    2. user can choose to see all listing 
+    1. User may login
+    2. User can search a seller.
+    3. User clicks on "Show all listings"
     
-- **Primary Postconditions:** <can be a list or short description> 
- User will see all availble listing 
+- **Primary Postconditions:** User will see all availble listing 
 
-- **Alternate Sequence:** <you can have more than one alternate sequence to describe multiple issues that may arise>
-  
- 1. User needs to login
+- **Alternate Sequence:** 
+  1. User needs to login
   2. User search the place or the seller
   3. Click on "See all Listing"
+
+### Find items (Hemanth Jammalamadaka)
+- **Pre-condition:** User is already viewing splash page
+
+- **Actors:** User and Server
+
+- **Trigger:** User clicks on "Find".
+
+- **Primary Sequence:**
+  
+  1. User clicks on search bar.
+  2. User selects "type", "locality" and "city" search parameters of product to narrow down results
+  3. User clicks on "Find" to initiate action.
+ 
+- **Primary Postconditions:** User can see a list of all the products that match the search criterion.
+
+### User Profiles (Hemanth Jammalamadaka)
+- **Pre-condition:** Should already have an account (), be logged into said account. 
+
+- **Actors:** User and Server
+
+- **Trigger:** User clicks on profile display picture, and consequently "view proflie"
+
+- **Primary Sequence:**
+  
+  1. User logs into their account.
+  2. User clicks on desired user's profile picture.
+  3. User clicks on "view profile" to confirm action. 
+ 
+- **Primary Postconditions:** User can see all products listed by the user as well as all the ratings posted by the user.
+
+### User Rating (Pranav Arora)
+- **Pre-condition:** Should already have an account, be logged in as a customer, and have already chosen a product. 
+
+- **Actors:** User and Server
+
+- **Trigger:** Customer clicks on "Reviews".
+
+- **Primary Sequence:**
+  
+  1. User logs into their account.
+  2. User chooses to buy a product.
+  3. User clicks on the product they want to buy.
+  4. User clicks on "Reviews" to check the user ratings.
+ 
+- **Primary Postconditions:** User will see a list of reviews/comments regarding the product.
+
+- **Alternate Sequence:** 
+  
+  1. User logs into their account.
+  2. User chooses to buy a product.
+  3. User directly clicks on the star logo under the product title. 
+
+### Bid Item (Pranav Arora)
+- **Pre-condition:** Should already have an account, be logged in as a customer, and have already chosen a product. 
+
+- **Actors:** User and Server
+
+- **Trigger:** Customer clicks on "Place Bid".
+
+- **Primary Sequence:**
+  
+  1. User logs into their account.
+  2. User chooses to buy a product.
+  3. User clicks on the product they want to bid on.
+  4. User clicks on "Place Bid".
+  5. User enters the amount for the bid.
+  6. User clicks on confirm.
+ 
+- **Primary Postconditions:** User will see that their bid is confirmed and after that they'll see an option on how they will be updated about the bids on the product. 
+
+- **Alternate Sequence:** 
+  
+  1. User logs into their account.
+  2. User chooses to buy a product.
+  3. User directly clicks on the "Bid" button under the product title.
+  4. User adds the amount to the text box.
+  5. User confirms the amount.
+

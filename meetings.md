@@ -19,6 +19,12 @@
   
   - Planned our steps for the next meeting.
   
+### 2022-04-17 at 20:00
+- Pranav Arora, Hemanth Jammalamadaka, Eleasha Dela Cruz, Vincent Pham.
+- Milestone 1: Meeting
+  - Completing the use cases and discussing future workings.
+
+
 <meeting template would go here>
 <only fill in template once you had the meeting>
 <see example on the last date>
