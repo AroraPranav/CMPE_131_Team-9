@@ -21,8 +21,15 @@
 4. Environmental
 
 ## Use Cases
+### Login
 
-#### Use Case Name (Should match functional requirement name)
+### Logout
+
+### Create new account
+
+### Delete account
+
+### Use Case Name (Should match functional requirement name)
 - **Pre-condition:** <can be a list or short description> 
 
 - **Trigger:** <can be a list or short description> 
