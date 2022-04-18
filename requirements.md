@@ -29,7 +29,7 @@
 
 ### Delete account
 
-### Find items JammalamadakaProfiles)
+### Find items (Hemanth Jammalamadaka)
 - **Pre-condition:** User is already viewing splash page
 
 - **Actors:** User and Server
@@ -44,7 +44,7 @@
  
 - **Primary Postconditions:** User can see a list of all the products that match the search criterion.
 
-### User Profiles (Hemanth JammalamadakaProfiles)
+### User Profiles (Hemanth Jammalamadaka)
 - **Pre-condition:** Should already have an account (), be logged into said account. 
 
 - **Actors:** User and Server
