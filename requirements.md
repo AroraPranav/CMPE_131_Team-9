@@ -41,42 +41,42 @@
   - Actor(s): A customer or seller
   - Pre-conditions: User has currently logged into a registered account
   - Trigger: User selects 'Delete account'
--  User Ratings
+- User Ratings
   - Summary: 
   - Actor(s): 
   - Pre-conditions: 
   - Trigger: 
--  Bid Item
+- Bid Item
   - Summary: 
   - Actor(s): 
   - Pre-conditions: 
   - Trigger: 
--  See all items available from all of the sellers
+- See all items available from all of the sellers
   - Summary: 
   - Actor(s): 
   - Pre-conditions: 
   - Trigger: 
--  Find Items
+- Find Items
   - Summary: 
   - Actor(s): 
   - Pre-conditions: 
   - Trigger: 
--  User Profiles
+- User Profiles
   - Summary: 
   - Actor(s): 
   - Pre-conditions: 
   - Trigger: 
--  Add Pictures for Items
+- Add Pictures for Items
   - Summary: 
   - Actor(s): 
   - Pre-conditions: 
   - Trigger: 
--  Add Items
+- Add Items
   - Summary: 
   - Actor(s): 
   - Pre-conditions: 
   - Trigger: 
--  Splash Page
+- Splash Page
   - Summary: 
   - Actor(s): 
   - Pre-conditions: 
