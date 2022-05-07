@@ -15,7 +15,9 @@ class User(db.Model, UserMixin):
     budget = db.Column(db.Integer(), nullable=False, default=1000)
     items = db.relationship('Item', backref='owned_user', lazy=True)
 
-    name = db.Column(db.String(length=30), nullable=False)
+    firstName = db.Column(db.String(length=30), nullable=False)
+    lastName = db.Column(db.String(length=30), nullable=False)
+    rating = db.Column(db.Integer())
 
     @property
     def prettier_budget(self):
@@ -49,7 +51,7 @@ class Item(db.Model):
     description = db.Column(db.String(length=1024), nullable=False, unique=True)
     owner = db.Column(db.Integer(), db.ForeignKey('user.id'))
     
-    address = db.Column(db.String(length=30), nullable=False)
+    address = db.Column(db.String(length=50), nullable=False)
     city = db.Column(db.String(length=30), nullable=False)
     zip = db.Column(db.String(length=30), nullable=False)
     bed = db.Column(db.Integer(), nullable=False)
