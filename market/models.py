@@ -52,9 +52,11 @@ class Item(db.Model):
     zip = db.Column(db.String(length=30), nullable=False)
     bed = db.Column(db.Integer(), nullable=False)
     bath = db.Column(db.Integer(), nullable=False)
-    rural = db.Column(db.Boolean())
-    urban = db.Column(db.Boolean())
-    apartment = db.Column(db.Boolean())
+    rural = db.Column(db.Boolean(), default = False)
+    urban = db.Column(db.Boolean(), default = False)
+    apartment = db.Column(db.Boolean(), default = False)
+    house = db.Column(db.Boolean(), default = False)
+    condo = db.Column(db.Boolean(), default = False)
     picdata = db.Column(db.LargeBinary) #Actual data, needed for Download
     rendered_picdata = db.Column(db.Text)#Data to render the pic in browser
 
