@@ -45,9 +45,7 @@ class User(db.Model, UserMixin):
 
 class Item(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
-    name = db.Column(db.String(length=30), nullable=False, unique=True)
     price = db.Column(db.Integer(), nullable=False)
-    barcode = db.Column(db.String(length=12), nullable=False, unique=True)
     description = db.Column(db.String(length=1024), nullable=False, unique=True)
     owner = db.Column(db.Integer(), db.ForeignKey('user.id'))
     
@@ -57,6 +55,7 @@ class Item(db.Model):
     bed = db.Column(db.Integer(), nullable=False)
     bath = db.Column(db.Integer(), nullable=False)
     rural = db.Column(db.Boolean(), default = False)
+    suburban = db.Column(db.Boolean(), default = False)
     urban = db.Column(db.Boolean(), default = False)
     apartment = db.Column(db.Boolean(), default = False)
     house = db.Column(db.Boolean(), default = False)
