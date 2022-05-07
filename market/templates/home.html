@@ -9,8 +9,14 @@
             <p class="lead font-weight-normal">Start purchasing or selling houses by clicking the button below</p>
             <a class="btn btn-primary" href="{{ url_for('market_page') }}">Buy</a>
             <a class="btn btn-primary" href="{{ url_for('market_page') }}">Sell</a>
-            <form action="{{ url_for('listing') }}">
-                <input type="submit" value="Go to Listings" />
+            <form action="{{ url_for('listing_city') }}">
+                <input type="submit" value="City" />
+            </form>
+            <form action="{{ url_for('listing_urban') }}">
+                <input type="submit" value="Urban" />
+            </form>
+            <form action="{{ url_for('listing_apartments') }}">
+                <input type="submit" value="Apartments" />
             </form>
         </div>
         <div class="product-device box-shadow d-none d-md-block"></div>
