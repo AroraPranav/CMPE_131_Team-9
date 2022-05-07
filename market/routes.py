@@ -1,7 +1,7 @@
 from market import app
 from flask import render_template, redirect, url_for, flash, request
 from market.models import Item, User
-from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm
+from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm, ItemInfoForm
 from market import db
 from flask_login import login_user, logout_user, login_required, current_user
 
@@ -89,3 +89,25 @@ def logout_page():
     logout_user()
     flash("You have been logged out!", category='info')
     return redirect(url_for("home_page"))
+
+
+@app.route('/city')
+def listing_city():
+    return render_template('createListing.html')
+
+
+@app.route('/urban')
+def listing_urban():
+    return render_template('createListing.html')
+
+
+@app.route('/apartments')
+def listing_apartments():
+    return render_template('createListing.html')
+
+
+"""
+@app.route('/searches')
+@app.route('/profiles')
+
+"""
