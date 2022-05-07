@@ -89,3 +89,20 @@ def logout_page():
     logout_user()
     flash("You have been logged out!", category='info')
     return redirect(url_for("home_page"))
+
+@app.route('/city')
+def listing_city():
+    return render_template('createListing.html')
+
+@app.route('/urban')
+def listing_urban():
+    return render_template('createListing.html')
+
+@app.route('/apartments')
+def listing_apartments():
+    return render_template('createListing.html')
+"""
+@app.route('/searches')
+@app.route('/profiles')
+
+"""
