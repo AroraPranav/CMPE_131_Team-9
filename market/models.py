@@ -46,18 +46,18 @@ class Item(db.Model):
     barcode = db.Column(db.String(length=12), nullable=False, unique=True)
     description = db.Column(db.String(length=1024), nullable=False, unique=True)
     owner = db.Column(db.Integer(), db.ForeignKey('user.id'))
-    address = db.Column(db.String(length=30))
-
-    city = db.Column(db.String(length=30), nullable=False, unique=True)
-    zip = db.Column(db.String(length=30), nullable=False, unique=True)
+    """
+    address = db.Column(db.String(length=30), nullable=False)
+    city = db.Column(db.String(length=30), nullable=False)
+    zip = db.Column(db.String(length=30), nullable=False)
     bed = db.Column(db.Integer(), nullable=False)
     bath = db.Column(db.Integer(), nullable=False)
-    rural = db.Column(db.Boolean())
-    urban = db.Column(db.Boolean())
-    apartment = db.Column(db.Boolean())
-    picdata = db.Column(db.LargeBinary, nullable=False) #Actual data, needed for Download
-    rendered_picdata = db.Column(db.Text, nullable=False)#Data to render the pic in browser
-
+    rural = db.Column(db.Boolean(), default = False)
+    urban = db.Column(db.Boolean(), defualt = False)
+    apartment = db.Column(db.Boolean(), default = False)
+    picdata = db.Column(db.LargeBinary) #Actual data, needed for Download
+    rendered_picdata = db.Column(db.Text)#Data to render the pic in browser
+    """
     def __repr__(self):
         return f'Item {self.name}'
 

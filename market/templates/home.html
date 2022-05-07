@@ -9,6 +9,9 @@
             <p class="lead font-weight-normal">Start purchasing or selling houses by clicking the button below</p>
             <a class="btn btn-primary" href="{{ url_for('market_page') }}">Buy</a>
             <a class="btn btn-primary" href="{{ url_for('market_page') }}">Sell</a>
+            <form action="{{ url_for('listing') }}">
+                <input type="submit" value="Go to Listings" />
+            </form>
         </div>
         <div class="product-device box-shadow d-none d-md-block"></div>
         <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
