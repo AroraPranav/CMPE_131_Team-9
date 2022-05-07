@@ -15,6 +15,7 @@ How to use:
   To use this website, login or create an account then, simply just search what kind of building you are looking for, you can explore or buy one. And if you are a seller, you can always create a new post. 
 
 Version: python 3.9.5
+         flask 2.0.5
 
 List of features:
 -User Ratings 
