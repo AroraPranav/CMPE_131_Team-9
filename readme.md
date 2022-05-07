@@ -12,7 +12,7 @@ How to run:
 - run run.py
 
 How to use:
-  To use this website, login or create an account then, simply just search what kind of building you are looking for, you can explore or buy one. And if you are an seller, you can always create a new post. 
+  To use this website, login or create an account then, simply just search what kind of building you are looking for, you can explore or buy one. And if you are a seller, you can always create a new post. 
 
 Version: python 3.9.5
 
