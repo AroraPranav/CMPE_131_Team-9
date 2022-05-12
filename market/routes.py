@@ -15,9 +15,15 @@ def home_page():
 @app.route('/market', methods=['GET', 'POST'])
 @login_required
 def market_page():
-    purchase_form = PurchaseItemForm()
-    selling_form = SellItemForm()
-    if request.method == "POST":
+    form = PurchaseItemForm()
+    items = Item.query.all()
+
+
+    return render_template('market.html', items=items, form=form)
+
+    #PREVIOUS CODE FOR MARKET    
+    """
+        if request.method == "POST":
         # Purchase Item Logic
         purchased_item = request.form.get('purchased_item')
         p_item_object = Item.query.filter_by(name=purchased_item).first()
@@ -39,13 +45,16 @@ def market_page():
             else:
                 flash(f"Something went wrong with selling {s_item_object.name}", category='danger')
 
-        return redirect(url_for('market_page'))
+        if request.method == "GET":
+            items = Item.query.filter_by(owner=None)
+            owned_items = Item.query.filter_by(owner=current_user.id)
+            return render_template('market.html', items=items, purchase_form=purchase_form, owned_items=owned_items,
+                                selling_form=selling_form)
+    """
+    #PREVIOUS CODE FOR MARKET    
 
-    if request.method == "GET":
-        items = Item.query.filter_by(owner=None)
-        owned_items = Item.query.filter_by(owner=current_user.id)
-        return render_template('market.html', items=items, purchase_form=purchase_form, owned_items=owned_items,
-                               selling_form=selling_form)
+
+
 
 
 @app.route('/register', methods=['GET', 'POST'])
