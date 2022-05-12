@@ -1,7 +1,7 @@
 from market import app
 from flask import render_template, redirect, url_for, flash, request
 from market.models import Item, User
-from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm
+from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm, createListing
 from market import db
 from flask_login import login_user, logout_user, login_required, current_user
 
@@ -99,6 +99,15 @@ def listing_urban():
 @app.route('/apartments')
 def listing_apartments():
     return render_template('createListing.html')
+
+@app.route('/sell', methods=["POST", "GET"])
+def add_item():
+    form = createListing()
+    if request.method == "POST":
+        listing = request.form
+        flash('{}' .format(form.location.data))
+        return redirect('/sell')
+    return render_template('createListing.html', form=form)
 """
 @app.route('/searches')
 @app.route('/profiles')

@@ -34,3 +34,7 @@ class PurchaseItemForm(FlaskForm):
 
 class SellItemForm(FlaskForm):
     submit = SubmitField(label='Sell Item!')
+
+class createListing(FlaskForm):
+    location = StringField('City', validators=[DataRequired()])
+    submit = SubmitField('Add listing')
