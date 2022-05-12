@@ -101,17 +101,27 @@ def listing_apartments():
     return render_template('createListing.html')
 
 @app.route('/sell', methods=["POST", "GET"])
+@login_required
 def add_item():
     form = createListing()
-    print(Item.query.all())
+    items = Item.query.filter(Item.owner=="Jason").all()
+    #print(current_user.username)
     if request.method == "POST":
         listing = request.form
-        listing_to_create = Item(price=form.price.data, description=form.description.data, owner="Vincent", address=form.address.data, city= form.city.data, zip=form.zipcode.data, bed = form.bed.data, bath=form.bath.data)
+        listing_to_create = Item(price=form.price.data, description=form.description.data, owner="Jason", address=form.address.data, city= form.city.data, zip=form.zipcode.data, bed = form.bed.data, bath=form.bath.data)
         db.session.add(listing_to_create)
         db.session.commit()
-        flash('{}' .format(Item.query.all()))
+        for item in items:
+            a= str(f'Owner: {item.owner}, Address: {item.address}')
+            flash('{}' .format(a))
         return redirect('/sell')
     return render_template('createListing.html', form=form)
+
+@app.route('/profile')
+def getProfile():
+    items = Item.query.filter(Item.owner==current_user.username).all()
+    return render_template("viewListing.html", items=items)
+
 """
 @app.route('/searches')
 @app.route('/profiles')

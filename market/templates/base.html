@@ -23,7 +23,7 @@
           <img src = "{{url_for('static', filename='styles/house.png')}}" class="logo"/>
         {% if current_user.is_authenticated %}
         <div class="right">
-          <a class="nav-link">Welcome, {{ current_user.username }}</a>
+          <a class="nav-link" href="{{ url_for('getProfile') }}">Welcome, {{ current_user.username }}</a>
           <a class="nav-link" style="color: lawngreen; font-weight: bold">
             <i class="fas fa-coins"></i>
             {{ current_user.prettier_budget }}

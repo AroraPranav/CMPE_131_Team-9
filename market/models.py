@@ -64,7 +64,7 @@ class Item(db.Model):
     rendered_picdata = db.Column(db.Text)#Data to render the pic in browser
 
     def __repr__(self):
-        return f'[PROPERTY {self.id}]: Price:{self.price}, Description:{self.description}, Owner:{self.owner}, Address:{self.address}, City:{self.city}, Zipcode:{self.zip}, Bed:{self.bed}, Bath:{self.bath}\n\n'
+        return f'[PROPERTY {self.id}]: Price:{self.price}, Description:{self.description}, Owner:{self.owner}, Address:{self.address}, City:{self.city}, Zipcode:{self.zip}, Bed:{self.bed}, Bath:{self.bath}'
 
     def buy(self, user):
         self.owner = user.id
