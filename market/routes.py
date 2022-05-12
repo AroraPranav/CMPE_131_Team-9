@@ -103,9 +103,13 @@ def listing_apartments():
 @app.route('/sell', methods=["POST", "GET"])
 def add_item():
     form = createListing()
+    print(Item.query.all())
     if request.method == "POST":
         listing = request.form
-        flash('{}' .format(form.location.data))
+        listing_to_create = Item(price=form.price.data, description=form.description.data, owner="Vincent", address=form.address.data, city= form.city.data, zip=form.zipcode.data, bed = form.bed.data, bath=form.bath.data)
+        db.session.add(listing_to_create)
+        db.session.commit()
+        flash('{}' .format(Item.query.all()))
         return redirect('/sell')
     return render_template('createListing.html', form=form)
 """

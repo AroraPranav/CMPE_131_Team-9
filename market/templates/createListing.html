@@ -20,29 +20,33 @@
                 Add listing
             </h1>
             <br>
-            <div class ="button">
-              {{ form.location.label() }}
-              {{ form.location(class="form-control", placeholder="Enter city") }}
+            <div class ="listingButton">
+              {{ form.city.label() }}
+              {{ form.city(class="form-control", placeholder="Enter city") }}
             </div>
-            <div class="button">
+            <div class="listingButton">
               {{ form.price.label() }}
               {{ form.price(class="form-control", placeholder="Price") }}
             </div>
-            <div class="button">
+            <div class="listingButton">
               {{ form.address.label() }}
               {{ form.address(class="form-control", placeholder="Address") }}
             </div>
-            <div class="button">
+            <div class="listingButton">
               {{ form.zipcode.label() }}
               {{ form.zipcode(class="form-control", placeholder="Zipcode") }}
             </div>
-            <div class="button">
+            <div class="listingButton">
               {{ form.bed.label() }}
               {{ form.bed(class="form-control", placeholder="Number of Bed") }}
             </div>
-            <div class="button">
+            <div class="listingButton">
               {{ form.bath.label() }}
               {{ form.bath(class="form-control", placeholder="Number of Bath") }}
+            </div>
+            <div class="listingButton">
+              {{ form.description.label() }}
+              {{ form.description(class="form-control", placeholder="Description of Property") }}
             </div>
 
 

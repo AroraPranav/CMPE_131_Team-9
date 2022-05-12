@@ -43,4 +43,5 @@ class createListing(FlaskForm):
     bed = IntegerField('Bed', validators=[DataRequired()])
     bath = IntegerField('Bath', validators=[DataRequired()])
     price = IntegerField('Price', validators=[DataRequired()])
+    description = StringField('Description', validators=[DataRequired()])
     submit = SubmitField('Add listing')

@@ -46,7 +46,7 @@ class User(db.Model, UserMixin):
 class Item(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     price = db.Column(db.Integer(), nullable=False)
-    description = db.Column(db.String(length=1024), nullable=False, unique=True)
+    description = db.Column(db.String(length=1024))
     owner = db.Column(db.Integer(), db.ForeignKey('user.id'))
     
     address = db.Column(db.String(length=50), nullable=False)
@@ -64,7 +64,7 @@ class Item(db.Model):
     rendered_picdata = db.Column(db.Text)#Data to render the pic in browser
 
     def __repr__(self):
-        return f'Item {self.name}'
+        return f'[PROPERTY {self.id}]: Price:{self.price}, Description:{self.description}, Owner:{self.owner}, Address:{self.address}, City:{self.city}, Zipcode:{self.zip}, Bed:{self.bed}, Bath:{self.bath}\n\n'
 
     def buy(self, user):
         self.owner = user.id
