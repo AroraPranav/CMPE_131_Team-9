@@ -93,3 +93,19 @@
   .right {
     float: right
   }
+
+  /* CSS for house logo*/
+  .logo {
+    display: inline-block;
+    left: 50%;
+    top: 17px;
+    position: absolute;
+    max-width: 3%;
+    max-height: 3%;
+    border-radius:50%;
+    box-shadow: none;
+  }
+
+  .boxshadow {
+    box-shadow: none;
+  }
