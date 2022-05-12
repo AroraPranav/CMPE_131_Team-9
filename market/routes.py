@@ -15,9 +15,14 @@ def home_page():
 @app.route('/market', methods=['GET', 'POST'])
 @login_required
 def market_page():
-    purchase_form = PurchaseItemForm()
-    selling_form = SellItemForm()
-    if request.method == "POST":
+    form = PurchaseItemForm()
+    items = Item.query.all()
+
+    return render_template('market.html', items=items, form=form)
+
+    # PREVIOUS CODE FOR MARKET
+    """
+        if request.method == "POST":
         # Purchase Item Logic
         purchased_item = request.form.get('purchased_item')
         p_item_object = Item.query.filter_by(name=purchased_item).first()
@@ -39,13 +44,13 @@ def market_page():
             else:
                 flash(f"Something went wrong with selling {s_item_object.name}", category='danger')
 
-        return redirect(url_for('market_page'))
-
-    if request.method == "GET":
-        items = Item.query.filter_by(owner=None)
-        owned_items = Item.query.filter_by(owner=current_user.id)
-        return render_template('market.html', items=items, purchase_form=purchase_form, owned_items=owned_items,
-                               selling_form=selling_form)
+        if request.method == "GET":
+            items = Item.query.filter_by(owner=None)
+            owned_items = Item.query.filter_by(owner=current_user.id)
+            return render_template('market.html', items=items, purchase_form=purchase_form, owned_items=owned_items,
+                                selling_form=selling_form)
+    """
+    # PREVIOUS CODE FOR MARKET
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -109,18 +114,18 @@ def listing_apartments():
 @login_required
 def add_item():
     form = createListing()
-    items = Item.query.filter(Item.owner == "Jason").all()
+    items = Item.query.filter(Item.owner == current_user.username).all()
     # print(current_user.username)
     if request.method == "POST":
         listing = request.form
-        listing_to_create = Item(price=form.price.data, description=form.description.data, owner="Jason",
+        listing_to_create = Item(price=form.price.data, description=form.description.data, owner=current_user.username,
                                  address=form.address.data, city=form.city.data, zip=form.zipcode.data,
                                  bed=form.bed.data, bath=form.bath.data)
         db.session.add(listing_to_create)
         db.session.commit()
         for item in items:
             a = str(f'Owner: {item.owner}, Address: {item.address}')
-            flash('{}'.format(a))
+
         return redirect('/sell')
     return render_template('createListing.html', form=form)
 
@@ -128,7 +133,7 @@ def add_item():
 @app.route('/profile')
 def getProfile():
     items = Item.query.filter(Item.owner == current_user.username).all()
-    return render_template("viewListing.html", items=items)
+    return render_template("profile.html", items=items)
 
 
 """
