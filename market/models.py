@@ -1,3 +1,4 @@
+from ctypes import addressof
 from market import db, login_manager
 from market import bcrypt
 from flask_login import UserMixin
@@ -47,27 +48,25 @@ class User(db.Model, UserMixin):
 
 class Item(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
-    name = db.Column(db.String(length=30), nullable=False, unique=True)
     price = db.Column(db.Integer(), nullable=False)
-    barcode = db.Column(db.String(length=12), nullable=False, unique=True)
-    description = db.Column(db.String(length=1024), nullable=False, unique=True)
+    description = db.Column(db.String(length=1024))
     owner = db.Column(db.Integer(), db.ForeignKey('user.id'))
-
     address = db.Column(db.String(length=50), nullable=False)
     city = db.Column(db.String(length=30), nullable=False)
     zip = db.Column(db.String(length=30), nullable=False)
     bed = db.Column(db.Integer(), nullable=False)
     bath = db.Column(db.Integer(), nullable=False)
-    rural = db.Column(db.Boolean(), default=False)
-    urban = db.Column(db.Boolean(), default=False)
-    apartment = db.Column(db.Boolean(), default=False)
-    house = db.Column(db.Boolean(), default=False)
-    condo = db.Column(db.Boolean(), default=False)
-    picdata = db.Column(db.LargeBinary)  # Actual data, needed for Download
-    rendered_picdata = db.Column(db.Text)  # Data to render the pic in browser
+    rural = db.Column(db.Boolean(), default = False)
+    suburban = db.Column(db.Boolean(), default = False)
+    urban = db.Column(db.Boolean(), default = False)
+    apartment = db.Column(db.Boolean(), default = False)
+    house = db.Column(db.Boolean(), default = False)
+    condo = db.Column(db.Boolean(), default = False)
+    picdata = db.Column(db.LargeBinary) #Actual data, needed for Download
+    rendered_picdata = db.Column(db.Text)#Data to render the pic in browser
 
     def __repr__(self):
-        return f'Item {self.name}'
+        return f'[PROPERTY {self.id}]: Price:{self.price}, Description:{self.description}, Owner:{self.owner}, Address:{self.address}, City:{self.city}, Zipcode:{self.zip}, Bed:{self.bed}, Bath:{self.bath}'
 
     def buy(self, user):
         self.owner = user.id

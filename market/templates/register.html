@@ -6,7 +6,7 @@
 {% block content %}
 <body class="text-center">
     <div class="container">
-        <form method="POST" class="form-register" style="color:white">
+        <form method="POST" class="form-register" style="color:rgb(0, 0, 0)">
             {{ form.hidden_tag() }}
             <h1 class="h3 mb-3 font-weight-normal">
                 Please Create your Account
@@ -14,16 +14,21 @@
             <br>
             {{ form.username.label() }}
             {{ form.username(class="form-control", placeholder="User Name") }}
-
+            <br>
+            {{ form.firstName.label() }}
+            {{ form.firstName(class="form-control", placeholder="First Name") }}
+            <br>
+            {{ form.lastName.label() }}
+            {{ form.lastName(class="form-control", placeholder="Last Name") }}
+            <br>
             {{ form.email_address.label() }}
             {{ form.email_address(class="form-control", placeholder="Email Address") }}
-
+            <br>
             {{ form.password1.label() }}
             {{ form.password1(class="form-control", placeholder="Password") }}
 
             {{ form.password2.label() }}
             {{ form.password2(class="form-control", placeholder="Confirm Password") }}
-
             <br>
 
             <div class="checkbox mb-3">

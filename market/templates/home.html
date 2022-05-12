@@ -1,25 +1,49 @@
+<head>
+    <link rel="stylesheet" text="text.css" href="{{url_for('static', filename = 'styles/style.css') }}">
+</head>
 {% extends 'base.html' %}
 {% block title %}
     Welcome to the MarketPlace
 {% endblock %}
 {% block content %}
+
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:black">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 font-weight-normal">Real Estate MarketPlace</h1>
-            <p class="lead font-weight-normal">Start purchasing or selling houses by clicking the button below</p>
-            <a class="btn btn-primary" href="{{ url_for('market_page') }}">Buy</a>
-            <a class="btn btn-primary" href="{{ url_for('market_page') }}">Sell</a>
-            <form action="{{ url_for('listing_city') }}">
-                <input type="submit" value="City" />
-            </form>
-            <form action="{{ url_for('listing_urban') }}">
-                <input type="submit" value="Urban" />
-            </form>
-            <form action="{{ url_for('listing_apartments') }}">
-                <input type="submit" value="Apartments" />
-            </form>
-        </div>
+            
+            <h1 class="display-4 font-weight-normal" style="color:white; font-family: Helvetica, sans-serif; margin-left: 1%;">Real Estate MarketPlace</h1>
+            
+            <p class="lead font-weight-normal" style="color:white; font-family: Helvetica, sans-serif; margin-left: 1%;">Start purchasing or selling houses by clicking the button below</p>
+            <div class = "buyButton">
+                <a class="btn btn-primary" href="{{ url_for('market_page') }}">Buy</a>
+            </div>
+            <div class = "buyButton">
+                <a class="btn btn-primary" href="{{ url_for('add_item') }}">Sell</a>
+            </div>
+
+            <div class="moveDown">
+                <div class= "moveButtons">
+                    <div class = "button">
+                        <a class="btn btn-primary" href="{{ url_for('listing_city') }}">City</a>
+                    </div>
+                </div>
+                <div class="moveButtons">
+                    <div class = "button">
+                        <a class="btn btn-primary" href="{{ url_for('listing_urban') }}">Urban</a>
+                    </div>
+                </div>
+                <div class="moveButtons">
+                    <div class = "button">
+                        <a class="btn btn-primary" href="{{ url_for('listing_apartments') }}">Apartments</a>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+
+
+
         <div class="product-device box-shadow d-none d-md-block"></div>
         <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
-    </div>
+    </div> 
 {% endblock %}
