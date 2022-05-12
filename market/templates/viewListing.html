@@ -1,0 +1,18 @@
+<head>
+    <link rel="stylesheet" text="text.css" href="{{url_for('static', filename = 'styles/style.css') }}">
+</head>
+{% extends 'base.html' %}
+{% block title %}
+    Welcome to the MarketPlace
+{% endblock %}
+{% block content %}
+
+{% for item in items %}
+    <div class="box" style="font-family: Helvetica, sans-serif; margin-left: 1%;">
+        {{item}}
+    </div>"
+
+    
+{% endfor %}
+
+{% endblock %}
