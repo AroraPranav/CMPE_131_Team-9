@@ -3,9 +3,11 @@ from market import db, login_manager
 from market import bcrypt
 from flask_login import UserMixin
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer(), primary_key=True)
@@ -43,12 +45,12 @@ class User(db.Model, UserMixin):
     def can_sell(self, item_obj):
         return item_obj in self.items
 
+
 class Item(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     price = db.Column(db.Integer(), nullable=False)
     description = db.Column(db.String(length=1024))
     owner = db.Column(db.Integer(), db.ForeignKey('user.id'))
-    
     address = db.Column(db.String(length=50), nullable=False)
     city = db.Column(db.String(length=30), nullable=False)
     zip = db.Column(db.String(length=30), nullable=False)
