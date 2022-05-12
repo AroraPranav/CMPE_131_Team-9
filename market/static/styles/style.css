@@ -89,3 +89,7 @@
     color: #ffffff;
     text-decoration: none;
   }
+
+  .right {
+    float: right
+  }

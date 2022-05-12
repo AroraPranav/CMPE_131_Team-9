@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, HiddenField
+from wtforms import StringField, PasswordField, SubmitField, HiddenField, IntegerField
 from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationError
 from market.models import User
 
@@ -37,4 +37,10 @@ class SellItemForm(FlaskForm):
 
 class createListing(FlaskForm):
     location = StringField('City', validators=[DataRequired()])
+    address = StringField('Address', validators=[DataRequired()])
+    city = StringField('City', validators=[DataRequired()])
+    zipcode = StringField('Zipcode', validators=[DataRequired()])
+    bed = IntegerField('Bed', validators=[DataRequired()])
+    bath = IntegerField('Bath', validators=[DataRequired()])
+    price = IntegerField('Price', validators=[DataRequired()])
     submit = SubmitField('Add listing')

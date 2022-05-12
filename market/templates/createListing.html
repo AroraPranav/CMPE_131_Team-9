@@ -20,11 +20,34 @@
                 Add listing
             </h1>
             <br>
-            {{ form.location.label() }}
-            {{ form.location(class="form-control", placeholder="Enter city") }}
+            <div class ="button">
+              {{ form.location.label() }}
+              {{ form.location(class="form-control", placeholder="Enter city") }}
+            </div>
+            <div class="button">
+              {{ form.price.label() }}
+              {{ form.price(class="form-control", placeholder="Price") }}
+            </div>
+            <div class="button">
+              {{ form.address.label() }}
+              {{ form.address(class="form-control", placeholder="Address") }}
+            </div>
+            <div class="button">
+              {{ form.zipcode.label() }}
+              {{ form.zipcode(class="form-control", placeholder="Zipcode") }}
+            </div>
+            <div class="button">
+              {{ form.bed.label() }}
+              {{ form.bed(class="form-control", placeholder="Number of Bed") }}
+            </div>
+            <div class="button">
+              {{ form.bath.label() }}
+              {{ form.bath(class="form-control", placeholder="Number of Bath") }}
+            </div>
 
 
             <br>
+            <p></p>
               {{ form.submit() }}
             
             
