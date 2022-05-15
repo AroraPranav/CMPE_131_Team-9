@@ -1,7 +1,7 @@
 from market import app
 from flask import render_template, redirect, url_for, flash, request
 from market.models import Item, User
-from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm
+from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm, createListing
 from market import db
 from flask_login import login_user, logout_user, login_required, current_user
 
@@ -15,9 +15,14 @@ def home_page():
 @app.route('/market', methods=['GET', 'POST'])
 @login_required
 def market_page():
-    purchase_form = PurchaseItemForm()
-    selling_form = SellItemForm()
-    if request.method == "POST":
+    form = PurchaseItemForm()
+    items = Item.query.all()
+
+    return render_template('market.html', items=items, form=form)
+
+    # PREVIOUS CODE FOR MARKET
+    """
+        if request.method == "POST":
         # Purchase Item Logic
         purchased_item = request.form.get('purchased_item')
         p_item_object = Item.query.filter_by(name=purchased_item).first()
@@ -39,22 +44,21 @@ def market_page():
             else:
                 flash(f"Something went wrong with selling {s_item_object.name}", category='danger')
 
-        return redirect(url_for('market_page'))
-
-    if request.method == "GET":
-        items = Item.query.filter_by(owner=None)
-        owned_items = Item.query.filter_by(owner=current_user.id)
-        return render_template('market.html', items=items, purchase_form=purchase_form, owned_items=owned_items,
-                               selling_form=selling_form)
+        if request.method == "GET":
+            items = Item.query.filter_by(owner=None)
+            owned_items = Item.query.filter_by(owner=current_user.id)
+            return render_template('market.html', items=items, purchase_form=purchase_form, owned_items=owned_items,
+                                selling_form=selling_form)
+    """
+    # PREVIOUS CODE FOR MARKET
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register_page():
     form = RegisterForm()
     if form.validate_on_submit():
-        user_to_create = User(username=form.username.data,
-                              email_address=form.email_address.data,
-                              password=form.password1.data)
+        user_to_create = User(username=form.username.data, firstName=form.firstName.data, lastName=form.lastName.data,
+                              email_address=form.email_address.data, password=form.password1.data)
         db.session.add(user_to_create)
         db.session.commit()
         login_user(user_to_create)
@@ -89,3 +93,56 @@ def logout_page():
     logout_user()
     flash("You have been logged out!", category='info')
     return redirect(url_for("home_page"))
+
+
+@app.route('/city')
+def listing_city():
+    return render_template('listing_city.html')
+
+
+@app.route('/urban')
+def listing_urban():
+    return render_template('listing_urban.html')
+
+
+@app.route('/apartments')
+def listing_apartments():
+    return render_template('listing_apartments.html')
+
+
+@app.route('/sell', methods=["POST", "GET"])
+@login_required
+def add_item():
+    form = createListing()
+    items = Item.query.filter(Item.owner == current_user.username).all()
+    # print(current_user.username)
+    if request.method == "POST":
+        listing = request.form
+        listing_to_create = Item(price=form.price.data, description=form.description.data, owner=current_user.username,
+                                 address=form.address.data, city=form.city.data, zip=form.zipcode.data,
+                                 bed=form.bed.data, bath=form.bath.data)
+        db.session.add(listing_to_create)
+        db.session.commit()
+        for item in items:
+            a = str(f'Owner: {item.owner}, Address: {item.address}')
+
+        return redirect('/sell')
+    return render_template('createListing.html', form=form)
+
+
+@app.route('/profile')
+def getProfile():
+    items = Item.query.filter(Item.owner == current_user.username).all()
+    return render_template("profile.html", items=items)
+
+@app.route('/<int: item_id', methods=["POST"])
+def updateOwner(item_id):
+    db.session.execute(update(Item, values = {Item.owner : current_user.owner}, where = {Item.price < current_user.budget}))
+    db.session.commit()
+
+
+"""
+@app.route('/searches')
+@app.route('/profiles')
+
+"""
