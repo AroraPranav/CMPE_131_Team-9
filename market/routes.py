@@ -135,6 +135,11 @@ def getProfile():
     items = Item.query.filter(Item.owner == current_user.username).all()
     return render_template("profile.html", items=items)
 
+@app.route('/<int: item_id', methods=["POST"])
+def updateOwner(item_id):
+    db.session.execute(update(Item, values = {Item.owner : current_user.owner}, where = {Item.price < current_user.budget}))
+    db.session.commit()
+
 
 """
 @app.route('/searches')
