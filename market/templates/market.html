@@ -9,21 +9,22 @@
 
 <form method="POST" class="form-signin" style="color:rgb(0, 0, 0)">
     {{ form.hidden_tag() }}
-    <h1 class="h3 mb-3 font-weight-normal">
+    <h1 class="display-4 font-weight-normal" style="color:white; font-family: Helvetica, sans-serif; margin-left: 1%;">
         Add listing
     </h1>
-    {% for item in items %}
-    <div class="box" style="font-family: Helvetica, sans-serif; margin-left: 1%;">
-        {{item}}
-    </div>
-    <div class = "purchaseButton">
-        <a class="btn btn-primary" href="{{ url_for('market_page') }}">Buy</a>
-        {{ form.submit() }}
-    </div>
-    {% endfor %}
-      
-    
-    
+    {% if items %}
+        {% for item in items %}
+        <div class="box" style="font-family: Helvetica, sans-serif; margin-left: 1%;">
+            {{item}}
+        </div>
+        <div class = "purchaseButton">
+            <a class="btn btn-primary" href="{{ url_for('market_page') }}">Buy</a>
+            {{ form.submit() }}
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="lead font-weight-normal" style="color:white; font-family: Helvetica, sans-serif; margin-left: 1%;"> There were no results that match your search. Please try again!</p>
+    {% endif %}
 
 </form>
 

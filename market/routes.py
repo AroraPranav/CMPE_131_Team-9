@@ -1,23 +1,70 @@
 from market import app
 from flask import render_template, redirect, url_for, flash, request
 from market.models import Item, User
-from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm, createListing
+from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm, createListing, searchListing
 from market import db
 from flask_login import login_user, logout_user, login_required, current_user
 
 
 @app.route('/')
-@app.route('/home')
+@app.route('/home', methods=["POST", "GET"])
 def home_page():
-    return render_template('home.html')
+    form = searchListing()
+    purchase = PurchaseItemForm()
+    if request.method=="POST":
+        search = request.form
+        #SEARCH BY CITY
+        searches = Item.query.filter(Item.city==form.query.data).all()
+        print(searches)
+        return render_template('market.html', items=searches, form=purchase)
+    return render_template('home.html', form=form)
 
+#               BUTTON REDIRECTS                    #
+
+@app.route('/home', methods=["POST", "GET"])
+def listing_bed():
+    form = searchListing()
+    purchase = PurchaseItemForm()
+    if request.method=="POST":
+        search = request.form
+        #SEARCH BY BED
+        searches = Item.query.filter(Item.bed==form.query.data).all()
+        print(searches)
+        return render_template('market.html', items=searches, form=purchase)
+    return render_template('home.html', form=form)
+
+@app.route('/home', methods=["POST", "GET"])
+def listing_bath():
+    form = searchListing()
+    purchase = PurchaseItemForm()
+    if request.method=="POST":
+        search = request.form
+        #SEARCH BY BATH
+        searches = Item.query.filter(Item.bath==form.query.data).all()
+        print(searches)
+        return render_template('market.html', items=searches, form=purchase)
+    return render_template('home.html', form=form)
+
+@app.route('/home', methods=["POST", "GET"])
+def listing_zipcode():
+    form = searchListing()
+    purchase = PurchaseItemForm()
+    if request.method=="POST":
+        search = request.form
+        #SEARCH BY ZIPCODE
+        searches = Item.query.filter(Item.zip==form.query.data).all()
+        print(searches)
+        return render_template('market.html', items=searches, form=purchase)
+    return render_template('home.html', form=form)
+
+
+#               BUTTON REDIRECTS                    #
 
 @app.route('/market', methods=['GET', 'POST'])
 @login_required
 def market_page():
     form = PurchaseItemForm()
     items = Item.query.all()
-
 
     return render_template('market.html', items=items, form=form)
 
@@ -101,9 +148,6 @@ def logout_page():
 def listing_city():
     return render_template('createListing.html')
 
-@app.route('/urban')
-def listing_urban():
-    return render_template('createListing.html')
 
 @app.route('/apartments')
 def listing_apartments():
@@ -117,12 +161,11 @@ def add_item():
     #print(current_user.username)
     if request.method == "POST":
         listing = request.form
-        listing_to_create = Item(price=form.price.data, description=form.description.data, owner="Jason", address=form.address.data, city= form.city.data, zip=form.zipcode.data, bed = form.bed.data, bath=form.bath.data)
+        listing_to_create = Item(price=form.price.data, description=form.description.data, owner=current_user.username, address=form.address.data, city= form.city.data, zip=form.zipcode.data, bed = form.bed.data, bath=form.bath.data)
         db.session.add(listing_to_create)
         db.session.commit()
         for item in items:
             a= str(f'Owner: {item.owner}, Address: {item.address}')
-            flash('{}' .format(a))
         return redirect('/sell')
     return render_template('createListing.html', form=form)
 
