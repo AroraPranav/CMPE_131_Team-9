@@ -1,11 +1,11 @@
+from pickle import TRUE
 from market import app
 from flask import render_template, redirect, url_for, flash, request
 from market.models import Item, User
 from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm, createListing
 from market import db
 from flask_login import login_user, logout_user, login_required, current_user
-
-
+from sqlalchemy import update
 @app.route('/')
 @app.route('/home')
 def home_page():
@@ -135,11 +135,12 @@ def getProfile():
     items = Item.query.filter(Item.owner == current_user.username).all()
     return render_template("profile.html", items=items)
 
-@app.route('/<int: item_id', methods=["POST"])
+@app.route('/market', methods=["POST"]) #'/<int: item_id'
 def updateOwner(item_id):
-    db.session.execute(update(Item, values = {Item.owner : current_user.owner}, where = {Item.price < current_user.budget}))
-    db.session.commit()
-
+    db.session.execute(update(Item, values = {Item.owner : current_user.owner, Item.purchase : TRUE }, where = {Item.price < current_user.budget}, ))
+    db.session.execute(update(User, values = {User.budget : (current_user.budget - Item.price)}))
+    db.session.commit() 
+    return redirect('/market')
 
 """
 @app.route('/searches')
