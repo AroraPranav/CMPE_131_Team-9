@@ -56,3 +56,7 @@ class deleteUser(FlaskForm):
 class changePasssword(FlaskForm):
     new_password = PasswordField(label='Password: ', validators=[Length(min=6), DataRequired()])
     submit = SubmitField(label ='Submit')
+
+class searchListing(FlaskForm):
+    query = StringField('Search for property...', validators=[DataRequired()])
+    submit = SubmitField('Search')
