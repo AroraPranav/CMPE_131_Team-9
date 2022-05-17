@@ -1,5 +1,18 @@
 ## Meetings
 
+### 2022-05-17 at 20:00
+- Pranav Arora, Hemanth Jammalamadaka, Eleasha Dela Cruz, Vincent Pham.
+- Project Final Submission and error correction.
+
+### 2022-05-15 at 15:00
+- Pranav Arora, Hemanth Jammalamadaka, Eleasha Dela Cruz, Vincent Pham.
+- Updating files and features simultaneously. 
+- Disscussing about adding more features. 
+
+### 2022-05-12 at 18:00
+- Pranav Arora, Hemanth Jammalamadaka, Eleasha Dela Cruz, Vincent Pham.
+- Adding layout to the website and designing properly.
+- Discussing about adding filter buttons.
 
 ### 2022-04-15 at 21:00
 - Pranav Arora, Vincent Pham
