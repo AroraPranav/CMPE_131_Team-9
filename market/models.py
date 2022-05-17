@@ -42,6 +42,10 @@ class User(db.Model, UserMixin):
     def can_sell(self, item_obj):
         return item_obj in self.items
 
+    def change_password(self, new_password):
+        self.password_hash = bcrypt.generate_password_hash(new_password).decode('utf-8')
+        db.session.commit()
+
 
 class Item(db.Model):
     id = db.Column(db.Integer(), primary_key=True)

@@ -1,7 +1,7 @@
 from market import app
 from flask import render_template, redirect, url_for, flash, request
 from market.models import Item, User
-from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm, createListing
+from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm, createListing, deleteUser, changePasssword
 from market import db
 from flask_login import login_user, logout_user, login_required, current_user
 
@@ -130,15 +130,25 @@ def add_item():
     return render_template('createListing.html', form=form)
 
 
-@app.route('/profile')
-def getProfile():
+@app.route('/profile', methods = ['POST', 'GET'])
+def getprofile():
+    
     items = Item.query.filter(Item.owner == current_user.username).all()
-    return render_template("profile.html", items=items)
+    delete_user = deleteUser()
+    form_change_password = changePasssword()
+
+    if request.method == "POST":
+        if form_change_password.validate_on_submit():
+            new_password = form_change_password.new_password.data
+            current_user.change_password(new_password)
 
 
+            
+        elif delete_user.validate_on_submit():
+            db.session.delete(current_user)
+            db.session.commit()
+            flash("User deleted successfully")
+            return redirect(url_for('login_page'))
+    
+    return render_template('profile.html', items=items, delete_user = delete_user, form_change_password = form_change_password)
 
-"""
-@app.route('/searches')
-@app.route('/profiles')
-
-"""
