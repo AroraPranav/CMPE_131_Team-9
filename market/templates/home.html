@@ -21,21 +21,33 @@
             </div>
 
             <div class="moveDown">
-                <div class= "moveButtons">
-                    <div class = "button">
-                        <a class="btn btn-primary" href="{{ url_for('listing_city') }}">City</a>
-                    </div>
+    
+                <form method="POST" class ="form-signin">
+                    {{ form.hidden_tag() }}
+                        {{ form.query(class="querySearch", placeholder="Select below to search...") }}
+                    {{ form.submit(class="searchButton") }}
+                </form>
+                <br>
+                <div class = "button">
+                    <a class="btn btn-primary" href="{{ url_for('home_page') }}">City</a>
                 </div>
-                <div class="moveButtons">
-                    <div class = "button">
-                        <a class="btn btn-primary" href="{{ url_for('listing_urban') }}">Urban</a>
-                    </div>
+                <div class = "button">
+                    <a class="btn btn-primary" href="{{ url_for('listing_bed') }}">Bed</a>
                 </div>
-                <div class="moveButtons">
-                    <div class = "button">
-                        <a class="btn btn-primary" href="{{ url_for('listing_apartments') }}">Apartments</a>
-                    </div>
+                <div class = "button">
+                    <a class="btn btn-primary" href="{{ url_for('listing_zipcode') }}">Zipcode</a>
                 </div>
+                <br>
+                <div class = "button">
+                    <a class="btn btn-primary" href="{{ url_for('listing_bath') }}">Bath</a>
+                </div>
+                <div class = "button">
+                    <a class="btn btn-primary" href="{{ url_for('home_page') }}">Urban</a>
+                </div>
+                <div class = "button">
+                    <a class="btn btn-primary" href="{{ url_for('listing_apartments') }}">Apartments</a>
+                </div>
+
             </div>
 
             </div>

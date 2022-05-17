@@ -47,3 +47,7 @@ class createListing(FlaskForm):
     price = IntegerField('Price', validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
     submit = SubmitField('Add listing')
+
+class searchListing(FlaskForm):
+    query = StringField('Search for property...', validators=[DataRequired()])
+    submit = SubmitField('Search')
