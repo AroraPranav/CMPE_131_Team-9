@@ -7,10 +7,14 @@
 {% endblock %}
 {% block content %}
 
+<h1 class="display-4 font-weight-normal" style="color:white; font-family: Helvetica, sans-serif; margin-left: 1%;">
+    My listings
+</h1>
+
 {% for item in items %}
     <div class="box" style="font-family: Helvetica, sans-serif; margin-left: 1%;">
         {{item}}
-    </div>"
+    </div>
 
     
 {% endfor %}
