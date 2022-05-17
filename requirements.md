@@ -4,14 +4,14 @@
 2. Logout
 3. Create new account
 4. Delete account
-5. User Ratings (Pranav)
-6. Bid item (Pranav)
-7. See all items available from all of the sellers (Eleasha)
-8. Find items (Hemanth)
-9. User profiles (Hemanth)
-10. Add pictures for items (Eleasha)
-11. Add items (Vincent)
-12. Splash page (Vincent)
+5. Change password 
+6. Buy item 
+7. See all items available from all of the sellers 
+8. Find items 
+9. User profiles 
+10. Add pictures for items 
+11. Add items 
+12. Filter buttons 
 
 ## Non-functional Requirements
 
@@ -110,57 +110,46 @@
  
 - **Primary Postconditions:** User can see all products listed by the user as well as all the ratings posted by the user.
 
-### User Rating (Pranav Arora)
-- **Pre-condition:** Should already have an account, be logged in as a customer, and have already chosen a product. 
+### Change Password (Pranav Arora)
+- **Pre-condition:** Should already have an account, be logged in as a customer. 
 
-- **Summary:** This feature allows a user to rate a product.
+- **Summary:** This feature allows a user to change the password of their account.
 
 - **Actors:** User and Server
 
-- **Trigger:** Customer clicks on "Reviews".
+- **Trigger:** Customer enters the new password and clicks on submit.
+
+- **Primary Sequence:**
+  
+  1. User logs into their account.
+  2. User clicks on their profile.
+  3. User enters the new password. 
+  4. User clicks on "Submit" to update the password.
+ 
+- **Primary Postconditions:** User will see their profile with their listings.
+
+### Buy Item (Pranav Arora)
+- **Pre-condition:** Should already have an account, be logged in as a customer, and have already chosen a product. 
+
+- **Summary:** This feature allows a user to buy an item they want to buy.
+
+- **Actors:** User and Server
+
+- **Trigger:** Customer clicks on "Purchase".
 
 - **Primary Sequence:**
   
   1. User logs into their account.
   2. User chooses to buy a product.
-  3. User clicks on the product they want to buy.
-  4. User clicks on "Reviews" to check the user ratings.
+  3. User clicks on purchase item.
+  4. User confirms the payment.
  
-- **Primary Postconditions:** User will see a list of reviews/comments regarding the product.
-
 - **Alternate Sequence:** 
   
   1. User logs into their account.
-  2. User chooses to buy a product.
-  3. User directly clicks on the star logo under the product title. 
-
-### Bid Item (Pranav Arora)
-- **Pre-condition:** Should already have an account, be logged in as a customer, and have already chosen a product. 
-
-- **Summary:** This feature allows a user to bid on an item they want to buy.
-
-- **Actors:** User and Server
-
-- **Trigger:** Customer clicks on "Place Bid".
-
-- **Primary Sequence:**
-  
-  1. User logs into their account.
-  2. User chooses to buy a product.
-  3. User clicks on the product they want to bid on.
-  4. User clicks on "Place Bid".
-  5. User enters the amount for the bid.
-  6. User clicks on confirm.
- 
-- **Primary Postconditions:** User will see that their bid is confirmed and after that they'll see an option on how they will be updated about the bids on the product. 
-
-- **Alternate Sequence:** 
-  
-  1. User logs into their account.
-  2. User chooses to buy a product.
-  3. User directly clicks on the "Bid" button under the product title.
-  4. User adds the amount to the text box.
-  5. User confirms the amount.
+  2. User goes to the market.
+  3. User directly clicks on the "Purchase Item" button in the listing.
+  4. User confirms the purchase.
 
 ### Add Item (Vincent Pham) ###
 - **Summary:** Seller can add items such as their property for sale
@@ -190,29 +179,22 @@
         - Server displays an error message to the user
         - Server prompts user to enter all required information
         
-### Splash Page (Vincent Pham)
-- **Summary:** After clicking into the website, the user is prompted about their location or target price in order to query houses in the area
+### Filter Buttons (Vincent Pham)
+- **Summary:** These filter buttons allow a user to search the place according to their needs.
 
-- **Pre-condition:** No pre-condition
-
+- **Pre-condition:** User should be loggend in to their account.
+ 
 - **Actors:** User and Server
 
-- **Trigger:** User enters the website
+- **Trigger:** User logs in and come sto the home page.
 
 - **Primary Sequence:**
 
-    1. User enters the website
-    2. Server prompts user to input their target city, state
-    3. User types in City box and State box their city and state (see use case "Find item")
-    4. Server checks database for houses that match the entry
-    5. Server shows available houses on sale in the area
-
-- **Alternate Sequence:**
-
-    1. User enters website
-    2. Server prompts user to input their target city, state
-    3. User exits the splash page 
-    4. User logs into their account (see use case "Login")
+    1. User logs into their account.
+    2. User navigates to Home.
+    3. User clicks on the filter button to search according to their needs.
+    4. Server checks database for houses that match the entry.
+    5. Server shows available houses on sale in the area.
 
 ### Compatibility
 - This website is compatible on Google Chrome.
