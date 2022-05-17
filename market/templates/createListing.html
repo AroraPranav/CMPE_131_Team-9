@@ -14,7 +14,7 @@
       {% endif %}
       {% endwith %}
 
-        <form method="POST" class="form-signin" style="color:rgb(0, 0, 0)">
+        <form method="POST" class="form-signin" style="color:rgb(0, 0, 0)" enctype="multipart/form-data" >
             {{ form.hidden_tag() }}
             <h1 class="display-4 font-weight-normal" style="color:white; font-family: Helvetica, sans-serif; margin-left: 1%;"">
                 Add listing
@@ -48,8 +48,9 @@
               {{ form.description.label() }}
               {{ form.description(class="form-control", placeholder="Description of Property") }}
             </div>
-
-
+            <div class="listingButton">
+              {{ form.img }}
+            </div>
             <br>
             <p></p>
               {{ form.submit() }}

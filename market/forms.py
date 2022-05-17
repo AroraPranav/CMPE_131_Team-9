@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, HiddenField, IntegerField
 from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationError, InputRequired
 from market.models import User
-
+from flask_wtf.file import FileField
 
 class RegisterForm(FlaskForm):
     def validate_username(self, username_to_check):
@@ -46,6 +46,7 @@ class createListing(FlaskForm):
     bath = IntegerField('Bath', validators=[DataRequired()])
     price = IntegerField('Price', validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
+    img = FileField()
     submit = SubmitField('Add listing')
 
 
@@ -56,3 +57,7 @@ class deleteUser(FlaskForm):
 class changePasssword(FlaskForm):
     new_password = PasswordField(label='Password: ', validators=[Length(min=6), DataRequired()])
     submit = SubmitField(label ='Submit')
+
+class searchListing(FlaskForm):
+    query = StringField('Search for property...', validators=[DataRequired()])
+    submit = SubmitField('Search')

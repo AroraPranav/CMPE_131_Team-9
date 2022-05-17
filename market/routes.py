@@ -4,7 +4,7 @@ from market.models import Item, User
 from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm, changePasssword, createListing, deleteUser, searchListing
 from market import db
 from flask_login import login_user, logout_user, login_required, current_user
-
+from werkzeug.utils import secure_filename
 
 @app.route('/')
 @app.route('/home', methods=["POST", "GET"])
@@ -130,7 +130,8 @@ def add_item():
     # print(current_user.username)
     if request.method == "POST":
         listing = request.form
-        listing_to_create = Item(price=form.price.data, description=form.description.data, owner=current_user.username, address=form.address.data, city= form.city.data, zip=form.zipcode.data, bed = form.bed.data, bath=form.bath.data)
+        filename = secure_filename(form.img.data.filename)
+        listing_to_create = Item(picdata = form.img.data.read(), price=form.price.data, description=form.description.data, owner=current_user.username, address=form.address.data, city= form.city.data, zip=form.zipcode.data, bed = form.bed.data, bath=form.bath.data)
         db.session.add(listing_to_create)
         db.session.commit()
         for item in items:
