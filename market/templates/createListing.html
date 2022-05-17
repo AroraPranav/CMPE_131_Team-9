@@ -49,7 +49,13 @@
               {{ form.description(class="form-control", placeholder="Description of Property") }}
             </div>
             <div class="listingButton">
-              {{ form.img }}
+              {{ form.picture.label() }}
+              {{ form.picture(class="form-control-file") }}
+              {% if form.picture.errors %}
+                {% for error in form.picture.errors %}
+                  <span class="text-danger">{{ error }}</span>
+                {% endfor %}
+              {% endif %}
             </div>
             <br>
             <p></p>

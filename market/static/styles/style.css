@@ -135,7 +135,7 @@
   .logo {
     display: inline-block;
     left: 50%;
-    top: 17px;
+    top: 24px;
     position: absolute;
     max-width: 3%;
     max-height: 3%;
@@ -201,4 +201,11 @@
 
 .changetext {
   color: black;
+}
+
+.propertyImage {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
 }

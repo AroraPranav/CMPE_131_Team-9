@@ -63,7 +63,7 @@ class Item(db.Model):
     apartment = db.Column(db.Boolean(), default=False)
     house = db.Column(db.Boolean(), default=False)
     condo = db.Column(db.Boolean(), default=False)
-    img = db.Column(db.Text, unique=True)
+    image_file = db.Column(db.Text, unique=True, default="userimage.png")
     picdata = db.Column(db.LargeBinary)  # Actual data, needed for Download
     rendered_picdata = db.Column(db.Text)  # Data to render the pic in browser
 
