@@ -1,32 +1,29 @@
+<head>
+    <link rel="stylesheet" text="text.css" href="{{url_for('static', filename = 'styles/style.css') }}">
+</head>
 {% extends 'base.html' %}
 {% block title %}
-  Market Page
+    Welcome to the MarketPlace
 {% endblock %}
-
 {% block content %}
-      <table class="table table-hover table-dark">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Barcode</th>
-                <th scope="col">Price</th>
-                <th scope="col">Options</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in items %}
-                <tr>
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.barcode }}</td>
-                    <td>{{ item.price }}$</td>
-                    <td>
-                        <button class="btn btn-outline btn-info">More Info</button>
-                        <button class="btn btn-outline btn-success">Purchase this Item</button>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+
+<form method="POST" class="form-signin" style="color:rgb(0, 0, 0)">
+    {{ form.hidden_tag() }}
+    <h1 class="h3 mb-3 font-weight-normal">
+        Add listing
+    </h1>
+    {% for item in items %}
+    <div class="box" style="font-family: Helvetica, sans-serif; margin-left: 1%;">
+        {{item}}
+    </div>
+    <div class = "purchaseButton">
+        <a class="btn btn-primary" href="{{ url_for('market_page') }}">Buy</a>
+        {{ form.submit() }}
+    </div>
+    {% endfor %}
+
+
+</form>
+
+
 {% endblock %}

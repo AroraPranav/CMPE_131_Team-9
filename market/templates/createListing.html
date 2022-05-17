@@ -1,14 +1,62 @@
-<button onclick="showContent()">Show hidden content</button>
+{% extends 'base.html' %}
+{% block title %}
+    Listings
+{% endblock %}
 
-<template>
-  <h2>Flower</h2>
-  <img src="img_white_flower.jpg" width="214" height="204">
-</template>
+{% block content %}
+<body class="text-center">
+    <div class="container">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{message}}</p>
+        {% endfor %}
+      {% endif %}
+      {% endwith %}
 
-<script>
-function showContent() {
-  var temp = document.getElementsByTagName("template")[0];
-  var clon = temp.content.cloneNode(true);
-  document.body.appendChild(clon);
-}
-</script>
+        <form method="POST" class="form-signin" style="color:rgb(0, 0, 0)">
+            {{ form.hidden_tag() }}
+            <h1 class="h3 mb-3 font-weight-normal">
+                Add listing
+            </h1>
+            <br>
+            <div class ="listingButton">
+              {{ form.city.label() }}
+              {{ form.city(class="form-control", placeholder="Enter city") }}
+            </div>
+            <div class="listingButton">
+              {{ form.price.label() }}
+              {{ form.price(class="form-control", placeholder="Price") }}
+            </div>
+            <div class="listingButton">
+              {{ form.address.label() }}
+              {{ form.address(class="form-control", placeholder="Address") }}
+            </div>
+            <div class="listingButton">
+              {{ form.zipcode.label() }}
+              {{ form.zipcode(class="form-control", placeholder="Zipcode") }}
+            </div>
+            <div class="listingButton">
+              {{ form.bed.label() }}
+              {{ form.bed(class="form-control", placeholder="Number of Bed") }}
+            </div>
+            <div class="listingButton">
+              {{ form.bath.label() }}
+              {{ form.bath(class="form-control", placeholder="Number of Bath") }}
+            </div>
+            <div class="listingButton">
+              {{ form.description.label() }}
+              {{ form.description(class="form-control", placeholder="Description of Property") }}
+            </div>
+
+
+            <br>
+            <p></p>
+              {{ form.submit() }}
+            
+            
+
+        </form>
+    </div>
+</body>
+{% endblock %}
