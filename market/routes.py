@@ -108,7 +108,8 @@ def market_page():
 def register_page():
     form = RegisterForm()
     if form.validate_on_submit():
-        user_to_create = User(username=form.username.data, firstName=form.firstName.data, lastName=form.lastName.data, email_address=form.email_address.data, password=form.password1.data)
+        user_to_create = User(username=form.username.data, firstName=form.firstName.data, lastName=form.lastName.data,
+                              email_address=form.email_address.data, password=form.password1.data)
         db.session.add(user_to_create)
         db.session.commit()
         login_user(user_to_create)
@@ -144,21 +145,24 @@ def logout_page():
     flash("You have been logged out!", category='info')
     return redirect(url_for("home_page"))
 
+
 @app.route('/city')
 def listing_city():
-    return render_template('createListing.html')
+    return render_template('listing_city.html')
+
 
 
 @app.route('/apartments')
 def listing_apartments():
-    return render_template('createListing.html')
+    return render_template('listing_apartments.html')
+
 
 @app.route('/sell', methods=["POST", "GET"])
 @login_required
 def add_item():
     form = createListing()
-    items = Item.query.filter(Item.owner=="Jason").all()
-    #print(current_user.username)
+    items = Item.query.filter(Item.owner == current_user.username).all()
+    # print(current_user.username)
     if request.method == "POST":
         listing = request.form
         listing_to_create = Item(price=form.price.data, description=form.description.data, owner=current_user.username, address=form.address.data, city= form.city.data, zip=form.zipcode.data, bed = form.bed.data, bath=form.bath.data)
@@ -169,10 +173,17 @@ def add_item():
         return redirect('/sell')
     return render_template('createListing.html', form=form)
 
+
 @app.route('/profile')
 def getProfile():
-    items = Item.query.filter(Item.owner==current_user.username).all()
-    return render_template("viewListing.html", items=items)
+    items = Item.query.filter(Item.owner == current_user.username).all()
+    return render_template("profile.html", items=items)
+
+@app.route('/<int: item_id', methods=["POST"])
+def updateOwner(item_id):
+    db.session.execute(update(Item, values = {Item.owner : current_user.owner}, where = {Item.price < current_user.budget}))
+    db.session.commit()
+
 
 """
 @app.route('/searches')

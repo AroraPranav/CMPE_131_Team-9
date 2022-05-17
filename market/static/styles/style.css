@@ -198,3 +198,7 @@
   transition: 0.5s;
   outline: none;
 }
+
+.changetext {
+  color: black;
+}
