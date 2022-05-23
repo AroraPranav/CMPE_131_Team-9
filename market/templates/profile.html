@@ -12,6 +12,7 @@
 {% for item in items %}
     <div class="box" style="font-family: Helvetica, sans-serif; margin-left: 1%;">
         {{item}}
+        <img class="rounded-circle account-img" src="{{ url_for('static', filename='profile_pics/' + item.image_file) }}">
     </div>
 {% endfor %}
     <br>

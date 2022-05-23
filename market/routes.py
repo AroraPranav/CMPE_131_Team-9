@@ -1,10 +1,13 @@
+import os
+import secrets
+from PIL import Image
 from market import app
 from flask import render_template, redirect, url_for, flash, request
 from market.models import Item, User
 from market.forms import RegisterForm, LoginForm, PurchaseItemForm, SellItemForm, changePasssword, createListing, deleteUser, searchListing
 from market import db
 from flask_login import login_user, logout_user, login_required, current_user
-
+from werkzeug.utils import secure_filename
 
 @app.route('/')
 @app.route('/home', methods=["POST", "GET"])
@@ -15,13 +18,14 @@ def home_page():
         search = request.form
         #SEARCH BY CITY
         searches = Item.query.filter(Item.city==form.query.data).all()
+        print(form.query.data)
         print(searches)
         return render_template('market.html', items=searches, form=purchase)
     return render_template('home.html', form=form)
 
 #               BUTTON REDIRECTS                    #
 
-@app.route('/home', methods=["POST", "GET"])
+@app.route('/home_bed', methods=["POST", "GET"])
 def listing_bed():
     form = searchListing()
     purchase = PurchaseItemForm()
@@ -33,7 +37,7 @@ def listing_bed():
         return render_template('market.html', items=searches, form=purchase)
     return render_template('home.html', form=form)
 
-@app.route('/home', methods=["POST", "GET"])
+@app.route('/home_bath', methods=["POST", "GET"])
 def listing_bath():
     form = searchListing()
     purchase = PurchaseItemForm()
@@ -45,7 +49,7 @@ def listing_bath():
         return render_template('market.html', items=searches, form=purchase)
     return render_template('home.html', form=form)
 
-@app.route('/home', methods=["POST", "GET"])
+@app.route('/home_zip', methods=["POST", "GET"])
 def listing_zipcode():
     form = searchListing()
     purchase = PurchaseItemForm()
@@ -121,16 +125,26 @@ def listing_city():
 def listing_apartments():
     return render_template('listing_apartments.html')
 
+def save_picture(form_picture):
+    random_hex= secrets.token_hex(8)
+    _, f_ext = os.path.splitext(form_picture.filename)
+    picture_fn=random_hex + f_ext
+    picture_path = os.path.join(app.root_path, 'static/profile_pics', picture_fn)
+    form_picture.save(picture_path)
+
+    return picture_fn
 
 @app.route('/sell', methods=["POST", "GET"])
 @login_required
 def add_item():
     form = createListing()
     items = Item.query.filter(Item.owner == current_user.username).all()
-    # print(current_user.username)
     if request.method == "POST":
+        if form.picture.data:
+            picture_file = save_picture(form.picture.data)
         listing = request.form
-        listing_to_create = Item(price=form.price.data, description=form.description.data, owner=current_user.username, address=form.address.data, city= form.city.data, zip=form.zipcode.data, bed = form.bed.data, bath=form.bath.data)
+
+        listing_to_create = Item(image_file=picture_file, price=form.price.data, description=form.description.data, owner=current_user.username, address=form.address.data, city= form.city.data, zip=form.zipcode.data, bed = form.bed.data, bath=form.bath.data)
         db.session.add(listing_to_create)
         db.session.commit()
         for item in items:
