@@ -4,14 +4,14 @@
 2. Logout
 3. Create new account
 4. Delete account
-5. Change password 
-6. Buy item 
-7. See all items available from all of the sellers 
-8. Find items 
-9. User profiles 
-10. Add pictures for items 
-11. Add items 
-12. Filter buttons 
+5. Change account password 
+6. Buy a property
+7. Query all property listings published to the marketplace
+8. Input text to query for a property listing based on specific properties of the listing (2881 Address Lane)
+9. View the user's registered properties
+10. Add pictures for property listings
+11. Register a property listing
+12. Search for properties based on general attributes (apartment, city)
 
 ## Non-functional Requirements
 
@@ -29,71 +29,82 @@
 
 ### Delete account
 
-### Add pictures for items  (Eleasha Dela Cruz)
-- **Pre-condition:** Need to be login, create a listing, Need an image to upload.
+### Add pictures for property listings  (Eleasha Dela Cruz)
+- **Pre-condition:** Need to be login, navigate to 'Sell' page, need an image to upload.
 
-- **Summary:** This feature allows a seller to add photographs to their product.
+- **Summary:** After inputting their Property's information, they can add a picture of the property to give a better idea of what their house looks like.
 
 - **Actors:** User and Server
 
 - **Trigger:** 
-    1. Click "Create Listing"
+    1. Click "Sell"
     2. Click "Upload Image"
+    3. Browse file system for desired image
+    4. Submit
    
   
 - **Primary Sequence:**
     1. User Login 
-    2. User create a new listing
-    3. User upload image to show
+    2. User selects 'Sell' to create a listing
+    3. User inputs general property information before selecting 'upload image'
+    4. User inputs image
+    5. System checks if proper file format
+    6. System stores image to database
  
     
 - **Primary Postconditions:** Users will see a new created listing with images
 
 - **Alternate Sequence:** 
-  1. User login
-  2. User go to her personal account 
-  2. User create listing
-  3. User can upload multiple photos
+  1. User logs in
+  2. User go to their personal account 
+  2. User edits property listing
+  3. System checks if proper file format
+  4. System stores image to database
 
-###  See all items available from all of the sellers (Eleasha  Dela Cruz)
-- **Pre-condition:** Should already have an account, Logged in as customer, Should have a seller decided.
+###  Query all property listings published to the marketplace (Eleasha  Dela Cruz)
+- **Pre-condition:** Reached webpage, selected marketplace
 
-- **Summary:** This feature allows user to see all the products by the seller.
+- **Summary:** This feature allows user to see all the products by the sellers.
 
 - **Actors:** User and Server
 
-- **Trigger:** Choose a seller
+- **Trigger:** User navigates to Marketplace
   
 - **Primary Sequence:**
     1. User may login
-    2. User can search a seller.
-    3. User clicks on "Show all listings"
+    2. User clicks on 'Marketplace'
+    3. System queries all listings in the database
+    4. System displays the queries to the user
     
-- **Primary Postconditions:** User will see all availble listing 
+- **Primary Postconditions:** User will see all available listing 
 
-- **Alternate Sequence:** 
-  1. User needs to login
-  2. User search the place or the seller
-  3. Click on "See all Listing"
-
-### Find items (Hemanth Jammalamadaka)
-- **Pre-condition:** User is already viewing splash page
+### Input text to query for a property listing based on specific properties of the listing (Hemanth Jammalamadaka)
+- **Pre-condition:** User has reached webpage main search bar
  
-- **Summary:** This feature allows user to find a item to buy.
+- **Summary:** This feature allows user to find an item based on their specific input text like an address or zipcode
 
 - **Actors:** User and Server
 
-- **Trigger:** User clicks on "Find".
+- **Trigger:** User clicks on "Search bar".
 
 - **Primary Sequence:**
   
   1. User clicks on search bar.
-  2. User selects "type", "locality" and "city" search parameters of product to narrow down results
-  3. User clicks on "Find" to initiate action.
- 
-- **Primary Postconditions:** User can see a list of all the products that match the search criterion.
+  2. User selects category of "zipcode", "locality" and "city" search parameters of product to narrow down results
+  3. User inputs text for that selected category
+  4. Systems searches the database in that category for the inputted text
+  5. System displays the listings based on the input
 
-### User Profiles (Hemanth Jammalamadaka)
+- **Alternate Sequence:** 
+  1. User clicks on search bar
+  2. User selects category of "Number of beds" search parameter of product to narrow down results
+  3. User inptus text for that selected category
+  4. System searches the database in that category for the inputted text
+  5. System does not find the query, and lets the user know no entries were found
+
+- **Primary Postconditions:** System has queried the database, and returned a result
+
+### View the user's registered properties (Hemanth Jammalamadaka)
 - **Pre-condition:** Should already have an account , be logged into said account. 
 
 - **Summary:** This feature allows user to view a sellers profile.
@@ -107,8 +118,14 @@
   1. User logs into their account.
   2. User clicks on desired user's profile picture.
   3. User clicks on "view profile" to confirm action. 
+  4. User changes their password
+
+- **Alternate Sequence:** 
+  1. User logs into their account
+  2. User clicks on desired user's profile picture
+  3. User deletes their account
  
-- **Primary Postconditions:** User can see all products listed by the user as well as all the ratings posted by the user.
+- **Primary Postconditions:** User can see all products listed by the user, and change their account settings
 
 ### Change Password (Pranav Arora)
 - **Pre-condition:** Should already have an account, be logged in as a customer. 
@@ -142,16 +159,18 @@
   1. User logs into their account.
   2. User chooses to buy a product.
   3. User clicks on purchase item.
-  4. User confirms the payment.
+  4. System checks if they have enough money in the account
+  5. User owns the property
  
 - **Alternate Sequence:** 
   
   1. User logs into their account.
-  2. User goes to the market.
-  3. User directly clicks on the "Purchase Item" button in the listing.
-  4. User confirms the purchase.
+  2. User chooses to buy a product.
+  3. User clicks on purchase item.
+  4. System checks if they have enough money in the account
+  5. System denies purchase of the property
 
-### Add Item (Vincent Pham) ###
+### Register a property listing (Vincent Pham) ###
 - **Summary:** Seller can add items such as their property for sale
 
 - **Pre-condition:** User has signed in to their registered account
@@ -179,7 +198,7 @@
         - Server displays an error message to the user
         - Server prompts user to enter all required information
         
-### Filter Buttons (Vincent Pham)
+### Search for properties based on general attributes (Vincent Pham)
 - **Summary:** These filter buttons allow a user to search the place according to their needs.
 
 - **Pre-condition:** User should be loggend in to their account.
